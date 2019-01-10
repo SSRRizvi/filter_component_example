@@ -1,0 +1,83 @@
+npm install
+webpack
+webpack -watch
+npm install -g webpack-dev-server
+web-pack-server --content-base src 
+
+web-pack-server --content-base src -inline -hot
+
+====================
+scripts : {
+   "dev" : 
+"web-pack-server --content-base src -inline -hot"
+}
+====================
+
+npm run dev
+ (run webpack server which ins install globaly)
+
+modift the script :
+
+====================
+scripts : {
+   "dev" : 
+"./node_modules/.bin/web-pack-server --content-base src -inline -hot"
+}
+====================
+
+uninstall npm web pack server globally: 
+npm uninstall -g webpack-dev-server
+
+and then start npm webpack server
+
+npm run dev
+it run from scripts dev
+
+
+=================== React Setting for IE11 ===========
+npm install --save isomorphic-fetch es6-promise
+
+import "isomorphic-fetch";
+import ES6Promise from 'es6-promise';
+
+ES6Promise.polyfill();
+=========================Conditional setting in Render method =================
+npm install --save-dev jsx-control-statements
+add =>   "plugins": ["jsx-control-statements"] in webpack.config.js
+
+Now we can use :
+
+1.
+<If condition={ true }>
+  <span>IfBlock</span>
+</If>
+
+2. 
+
+<Choose>
+  <When condition={ test1 }>
+    <span>IfBlock</span>
+  </When>
+  <When condition={ test2 }>
+    <span>ElseIfBlock</span>
+    <span>Another ElseIfBlock</span>
+    <span>...</span>
+  </When>
+  <Otherwise>
+    <span>ElseBlock</span>
+  </Otherwise>
+</Choose>
+
+3.
+
+ <For each="item" of={ this.props.items }>
+    <span key={ item.id }>{ item.title }</span>
+  </For>
+  
+4.
+
+<For each="item" index="index" of={ items )}>
+  <span key={ item.id }>{ index }. { item.title }</span>
+</For>
+
+

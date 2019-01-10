@@ -1,0 +1,41 @@
+Redux: 
+Provides predicable state management using actions and reducer
+
+Action:
+Describe something has happen but they don't specify how it should be done
+
+Ex:
+
+{
+  type: 'CREATE_TODO',
+  payload: 'Build my first Redux app'
+}
+
+Reducers:
+A pure functon that takes the privious state and an action and returns the new state
+
+Sometimes it return the previous state
+(state,action) => state
+
+Sometimes it computes new state
+(state, action) => state + action.payload
+
+Reducers handle state transitions but they must be done synchronously
+ 
+=============
+Observable: it can represent just about anything
+1.
+it can be transformed in
+map, filter, reduce
+
+2. it can be combined
+
+========================================
+Merging objects with same properties
+
+var o1 = { a: 1, b: 1, c: 1 };
+var o2 = { b: 2, c: 2 };
+var o3 = { c: 3 };
+
+var obj = Object.assign({}, o1, o2, o3);
+console.log(obj); // { a: 1, b: 2, c: 3 }
