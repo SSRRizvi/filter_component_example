@@ -1,0 +1,7 @@
+<div>
+    <div data-filter-if='{ "foo": true }'>beep</div>
+    <div data-filter-if='{ "foo": true }'><span data-filter-value="receiverModel"></span>
+        <div data-replace-with="SimpleComponent">
+        </div>
+    </div>
+</div>
